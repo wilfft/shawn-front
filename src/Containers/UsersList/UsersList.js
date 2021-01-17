@@ -58,9 +58,12 @@ class UsersList extends React.Component {
       }
     }
   }
+
   render() {
+    let loading = this.state.users ? <h1> loaded </h1> : <h1> not loeades </h1>;
     return (
       <div className="userList">
+        {loading}
         <table>
           <thead>
             <tr>
