@@ -35,7 +35,9 @@ class DisplayRepository extends React.Component {
     console.log();
     return (
       <div className="repository">
-        <h3 className="titleRepository">Repositories</h3>
+        <h3 className="titleRepository">
+          {this.props.selected}: {"  "}Repositories
+        </h3>
 
         <table>
           <thead>
