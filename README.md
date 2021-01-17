@@ -1,13 +1,11 @@
-#### Shawn And Partners
+### To run,execute :rocket:
 
-##### Full stack Test - Front end side
+> ##### npm install
 
-to execute
+> ##### npm start
 
-###### npm install
+##### or you can open both heroku projects
 
-###### npm start
+##### front: https://shawn-front.herokuapp.com/
 
-#### online
-
-front: https://shawn-front.herokuapp.com/
+##### back: https://backend-api-movies.herokuapp.com/

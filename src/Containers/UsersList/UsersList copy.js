@@ -4,6 +4,7 @@ import axios from "axios";
 import "./UsersList.css";
 import DisplayUser from "../DisplayUser/DisplayUser";
 
+import { Route } from "react-router-dom";
 import { GoArrowRight } from "react-icons/go";
 import { GoArrowLeft } from "react-icons/go";
 
@@ -37,6 +38,7 @@ class UsersList extends React.Component {
   }
   selectUserHandler(username) {
     this.setState({ selected: username });
+    console.log(this.props);
   }
   nextButtonHandler() {
     if (!this.state.loading) {
@@ -101,13 +103,14 @@ class UsersList extends React.Component {
               className="arrow"
             >
               <GoArrowRight />
-            </button>
+            </button>{" "}
           </div>
         </table>
-
+        <Route path="/teste" component={DisplayUser} />
         {this.state.selected ? (
-          <DisplayUser selected={this.state.selected} />
+          <Route path="/teste" component={DisplayUser} />
         ) : (
+          //  <DisplayUser selected={this.state.selected} />
           <p> Select a user</p>
         )}
       </div>
