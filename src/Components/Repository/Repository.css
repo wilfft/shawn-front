@@ -1,0 +1,10 @@
+.repositoryBox {
+  border: 1px solid #eee;
+  box-shadow: 0 2px 3px #ccc;
+
+  box-sizing: border-box;
+}
+
+.td {
+  padding: 10px;
+}

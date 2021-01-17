@@ -1,0 +1,9 @@
+.users {
+  width: 100%;
+  padding: 16px;
+
+  border: 1px solid #eee;
+  box-shadow: 0 3px 4px darkgray;
+  margin: 10px;
+  box-sizing: border-box;
+}

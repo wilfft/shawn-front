@@ -1,0 +1,16 @@
+.userList {
+  display: flex;
+  margin-left: 50px;
+}
+
+.buttons {
+  flex-flow: row nowrap;
+
+  display: flex;
+  justify-content: center;
+}
+.arrow {
+  width: 100px;
+  justify-content: center;
+  align-items: center;
+}
