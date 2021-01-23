@@ -6,6 +6,7 @@ import DisplayUser from "../DisplayUser/DisplayUser";
 
 import { GoArrowRight } from "react-icons/go";
 import { GoArrowLeft } from "react-icons/go";
+import { Switch, Route } from "react-router";
 
 class UsersList extends React.Component {
   state = {
@@ -35,9 +36,7 @@ class UsersList extends React.Component {
     if (this.state.since === 0) this.loadUsers(this.state.since);
     console.log("[userlist] mounted");
   }
-  selectUserHandler(username) {
-    this.setState({ selected: username });
-  }
+
   nextButtonHandler() {
     if (!this.state.loading) {
       this.setState({ loading: true });
@@ -61,30 +60,38 @@ class UsersList extends React.Component {
 
   render() {
     return (
-      <div className="userList">
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Login</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.users ? (
-              this.state.users.map((user) => {
-                return (
-                  <User
-                    key={user.id}
-                    id={user.id}
-                    login={user.login}
-                    clicked={() => this.selectUserHandler(user.login)}
-                  />
-                );
-              })
-            ) : (
-              <h1>Loading users...</h1>
-            )}
-          </tbody>
+      <>
+        <div className="main">
+          <div id="content">
+            <h2 style={{ display: "flex", justifyContent: "center" }}>
+              User List from Github api{" "}
+            </h2>
+            <div className="table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Login</th>
+                    <th> Details </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {this.state.users
+                    ? this.state.users.map((user) => {
+                        return (
+                          <User
+                            key={user.id}
+                            id={user.id}
+                            login={user.login}
+                            clicked={() => this.selectUserHandler(user.login)}
+                          />
+                        );
+                      })
+                    : null}
+                </tbody>
+              </table>
+            </div>
+          </div>
           <div className="buttons">
             <button
               onClick={() => {
@@ -103,14 +110,8 @@ class UsersList extends React.Component {
               <GoArrowRight />
             </button>
           </div>
-        </table>
-
-        {this.state.selected ? (
-          <DisplayUser selected={this.state.selected} />
-        ) : (
-          <p> Select a user</p>
-        )}
-      </div>
+        </div>
+      </>
     );
   }
 }

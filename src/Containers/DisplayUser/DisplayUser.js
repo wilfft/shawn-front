@@ -60,3 +60,9 @@ class DisplayUser extends React.Component {
 }
 
 export default DisplayUser;
+/*
+
+{this.state.selected ? (
+  <DisplayUser selected={this.state.selected} />
+) : null}
+*/

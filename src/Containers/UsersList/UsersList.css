@@ -1,11 +1,15 @@
 .userList {
-  display: flex;
-  margin-left: 50px;
+  display: column;
+  justify-content: center;
 }
+.table {
+  width: 500px;
+  display: flex;
 
+  overflow: scroll;
+  height: 400px;
+}
 .buttons {
-  flex-flow: row nowrap;
-
   display: flex;
   justify-content: center;
 }
@@ -13,4 +17,53 @@
   width: 100px;
   justify-content: center;
   align-items: center;
+}
+/* Layout */
+
+.main {
+  align-items: center;
+  margin: auto;
+  top: 50px;
+  justify-content: center;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 3px #ccc;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+#content {
+  align-items: center;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* This is what we are focused on */
+.table {
+  overflow-y: scroll;
+  flex-grow: 1;
+}
+
+.table th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: silver;
+
+  border: 1px solid #eee;
+  box-shadow: 0 2px 3px #ccc;
+}
+
+/* A bit more styling to make it look better */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  padding: 10px;
+  text-align: center;
 }
